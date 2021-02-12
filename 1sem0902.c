@@ -25,5 +25,6 @@ int main() {
 	printf("x<y=%d\n", x < y);
 	printf("x==y=%d\n", x == y);
 	printf("x!=y=%d\n", x != y);
+	printf("x's address is %i\n",&x);
 	return 0;
 }
