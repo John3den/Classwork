@@ -58,19 +58,13 @@ void determineSortingOrder(int arr[]) {
 	return 0;
 }
 
-void eraseMultiplicatives(int arr[], int x) {
-	int p = x + x;
-	while (p < N) {
-		arr[p] = -1;
-		p += x;
-	}
-}
-
 int main() {
 	int arr[N];
+	
 	writeInputIntoArray(arr);
 	findAndPrintMax(arr);
 	findAndPrintMin(arr);
 	determineSortingOrder(arr);
+	
 	return 0;
 }
