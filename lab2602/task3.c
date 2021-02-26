@@ -2,6 +2,14 @@
 #define N 10
 #include <stdio.h>
 
+void display(int arr[]) {
+	printf("Prime numbers less than %i: ", N);
+	for (int i = 2; i < N; i++) {
+		if (arr[i] == 1)
+			printf("%i ", i);
+	}
+}
+
 void fillArray(int arr[]) {
 	for (int i = 0; i < N; i++) {
 		arr[i] = 1;
@@ -18,17 +26,10 @@ void eraseMultiplicatives(int arr[], int x) {
 
 
 void EratosthenesSieve(int arr[]) {
-
-	printf("Prime numbers less than %i: ", N);
 	for (int i = 2; i < N; i++) {
 		if (arr[i] == 1)
 			eraseMultiplicatives(arr, i);
 	}
-	for (int i = 2; i < N; i++) {
-		if (arr[i] == 1)
-			printf("%i ", i);
-	}
-
 }
 
 int main() {
@@ -36,6 +37,7 @@ int main() {
 
 	fillArray(arr);
 	EratosthenesSieve(arr);
+	display(arr);
 
 	return 0;
 }
