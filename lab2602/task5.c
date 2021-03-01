@@ -3,22 +3,27 @@
 #include <stdio.h>
 
 void fillArray(int arr[N][N]) {
-	for (int i = 0; i < N; i++) {
-		for (int j = 0; j < N; j++) {
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < N; j++)
+		{
 			arr[i][j] = -1;
 		}
 	}
 }
 
 void display(int arr[N][N]) {
-	for (int i = 0; i < N; i++) {
-		for (int j = 0; j < N; j++) {
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < N; j++) 
+		{
 			if (arr[j][i] < 10) printf(" %i ", arr[j][i]);
 			else  		    printf( "%i ", arr[j][i]);
 
 		}
 		printf("\n");
 	}
+	
 }
 
 int checkForth(int coordinateSystem[N][N], int X, int Y, int dirX, int dirY) {
