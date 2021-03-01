@@ -24,9 +24,9 @@ void display(int arr[N][N]) {
 }
 
 int checkForth(int coordinateSystem[N][N], int X, int Y, int dirX, int dirY) {
-	if (X + dirX >= N || Y + dirY >= N) return 0;
-	else if (coordinateSystem[X + dirX][Y + dirY] != -1) return 0;
-	else return 1;
+	if (X + dirX >= N || Y + dirY >= N) 		      return 0;
+	else if (coordinateSystem[X + dirX][Y + dirY] != -1)  return 0;
+	else 						      return 1;
 }
 
 void drawALine(int coordinateSystem[N][N], int *X ,int *Y, int *counter, int dirX, int dirY) {
@@ -42,18 +42,10 @@ void drawALine(int coordinateSystem[N][N], int *X ,int *Y, int *counter, int dir
 void changeDirectionClockwise(int* dirX,int* dirY,int* direction) {
 	switch (*direction)
 	{
-	case 1:
-		*dirX = 1; *dirY = 0;
-		break;
-	case 2:
-		*dirX = 0; *dirY = 1;
-		break;
-	case 3:
-		*dirX = -1; *dirY = 0;
-		break;
-	case 4:
-		*dirX = 0; *dirY = -1;
-		break;
+	case 1: *dirX =  1; *dirY =  0; break;
+	case 2: *dirX =  0; *dirY =  1; break;
+	case 3: *dirX = -1; *dirY =  0; break;
+	case 4: *dirX =  0; *dirY = -1; break;
 	}
 	*direction = *direction % 4 + 1;
 }
