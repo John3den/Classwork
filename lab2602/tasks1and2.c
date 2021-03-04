@@ -36,14 +36,12 @@ void determineSortingOrder(int arr[]) {
 	int risingOrderFlag = 1;
 	int descendingOrderFlag = 1;
 	int equalityflag = 1;
-	int x = arr[0];
 	for (int i = 1; i < N; i++) 
 	{
-		if (arr[i] == x) continue;
-		if (arr[i] >  x) descendingOrderFlag = 0;
+		if (arr[i] == arr[i-1]) continue;
+		if (arr[i] >  arr[i-1]) descendingOrderFlag = 0;
 		else		 risingOrderFlag = 0;
 		equalityflag = 0;
-		x = arr[i];
 	}
 	if (equalityflag) 	      printf("Numbers are equal UWU");
 	else if (risingOrderFlag)     printf("ascending order");
