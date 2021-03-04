@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
-#define N 10
+#define N 10000
 #include <stdio.h>
 
 void display(int arr[]) {
