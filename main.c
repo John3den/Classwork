@@ -1,31 +1,22 @@
-#define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
 #include <string.h>
 #include <math.h>
-#include <intrin.h>
-#define N 256
 
 int StrCmp(char* s1, char* s2) {
-	while (*s1++ && *s2++);
+	while (*s1 && *s2 && *s1++==*s2++);
 	return *--s2 - *--s1;
 }
 int str2int(char* str) {
 	int num = 0;
-	while(*str) num = num*10 + *str++ - '0';  
+	while(*str) 
+		num = num*10 + *str++ - '0';  
 	return num;
 }
 char* int2str(char* str, int num) {
 	int len = 0; 
-	int numcpy = num;
-	while (numcpy != 0)
-	{
-		numcpy /= 10;
+	while ((int)(num / pow(10, len))) 
 		len++;
-	}
-	for (int i = len - 1; i >= 0; i--)
-	{
-		str[i] = num % 10;
-	}
+	for (int i = 0; i <= len; i++)
+		str[i] =  i != len ? (int)(num / pow(10, len-1 - i)) % 10 + '0' : 0;
 	return str;
 }
 int isPalindrom(char* str) {
@@ -34,9 +25,4 @@ int isPalindrom(char* str) {
 		if (str[i] != str[len - 1 - i])
 			return 0;
 	return 1;
-}
-int main() {
-	int a = 11111;
-	printf("%i",);
-	return 0;
 }
